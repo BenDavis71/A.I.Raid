@@ -7,7 +7,7 @@ st.title('A.I.Raid')
 st.markdown('GPT-2 text generation model trained on Mike Leach quotes')
 st.image('https://i.ytimg.com/vi/Wtb1Eqolhzw/maxresdefault.jpg', use_column_width=True)
 
-topic = st.text_input('Suggest a topic', 'The dog jumped')
+topic = st.text_input('Suggest a topic', 'pineapple on pizza')
 
 max_length = st.radio(
         "How long do you want Coach Leach's response to be?",
@@ -16,8 +16,8 @@ go = st.button('Generate')
 
 @st.cache(allow_output_mutation=True)
 def getModel():
-        model = GPT2LMHeadModel.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid')
-        tokenizer = GPT2Tokenizer.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid')
+        model = GPT2LMHeadModel.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid', from_tf=True)
+        tokenizer = GPT2Tokenizer.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid', from_tf=True)
         return model, tokenizer
 
 
