@@ -16,8 +16,8 @@ go = st.button('Generate')
 
 @st.cache(allow_output_mutation=True)
 def getModel():
-        model = GPT2LMHeadModel.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid', from_pt=True)
-        tokenizer = GPT2Tokenizer.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid', from_tf=True)
+        model = GPT2LMHeadModel.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid')
+        tokenizer = GPT2Tokenizer.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid')
         return model, tokenizer
 
 
