@@ -27,11 +27,9 @@ def seedSwitch(x, rand):
         2: f'The problem with America today is that {x}',
         3: f'What do I think about {x}?',
         4: f'Let me tell you about {x}',
-        5: f'Everybody keeps saying {x} this, {x} that. Well I think',
-        6: f'The thing about {x}:',
-        7: f'You know, {x}',
-        8: f'It always amazes me how {x}',
-        9: f'We used to worry about {x} all the time.'     
+        5: f'The thing about {x}:',
+        6: f'You know, {x}',
+        7: f'It always amazes me how {x}',
     }
     
     return switcher.get(rand)
@@ -49,7 +47,7 @@ def lengthSwitch(length):
 if go:
 	model, tokenizer = getModel()
 
-	rand = np.random.randint(1,9)
+	rand = np.random.randint(1,8)
 	seed = seedSwitch(topic, rand)
 	max_length = lengthSwitch(max_length)
 	
