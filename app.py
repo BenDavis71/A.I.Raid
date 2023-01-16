@@ -1,23 +1,23 @@
 import torch
 import streamlit as st
-from transformers import GPT2Tokenizer, GPT2LMHeadModel
+from transformers import GPT2Tokenizer, GPTNeoForCausalLM
 import numpy as np
 
-st.title('A.I.Raid')
-st.markdown('GPT-2 text generation model trained on Mike Leach quotes')
-st.image('https://i.ytimg.com/vi/Wtb1Eqolhzw/maxresdefault.jpg', use_column_width=True)
+st.title('Bill Walton Chatbot')
+st.markdown('GPT-Neo text generation model trained on Bill Walton quotes')
+st.image('https://images.squarespace-cdn.com/content/v1/5866ffbad2b857fd0d13208e/1490718360057-NIY9CLEACN6CBGB95XE8/bill-walton.png', use_column_width=True)
 
 topic = st.text_input('Suggest a topic', 'pineapple on pizza')
 
 max_length = st.radio(
-        "How long do you want Coach Leach's response to be?",
+        "How long do you want Bill Walton's response to be?",
         ('Short','Medium','Long'))
 go = st.button('Generate')
 
 @st.cache(allow_output_mutation=True)
 def getModel():
-        model = GPT2LMHeadModel.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid')
-        tokenizer = GPT2Tokenizer.from_pretrained('BenDavis71/GPT-2-Finetuning-AIRaid')
+        model = GPTNeoForCausalLM.from_pretrained('BenDavis71/GPT-Neo-Bill-Walton')
+        tokenizer = GPT2Tokenizer.from_pretrained('BenDavis71/GPT-Neo-Bill-Walton')
         return model, tokenizer
 
 
